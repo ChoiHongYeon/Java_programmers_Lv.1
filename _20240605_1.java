@@ -25,7 +25,20 @@ class Solution {
             }
         }
 
+        Arrays.sort(numbers);
+        int zero = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] > 0) {
+                zero = i;
+                break;
+            }
+        }
+
+        if (zero >= 2)
+            nums_index--;
+
         int[] answer = Arrays.copyOfRange(nums, nums_index, max_length);
+
         return answer;
 
     }
